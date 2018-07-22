@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>js-md5</title>
+        <style>
+            h1 {
+                margin-left: -1rem;
+            }
+            h1:before {
+                content: "# ";
+            }
+            h2 {
+                margin-left: -1rem;
+            }
+            h2:before {
+                content: "## ";
+            }
+            input {
+                border: 0.2rem solid #c8e6c9;
+                border-radius: 0.4rem;
+                display: inline-block;
+                font-size: 1rem;
+                line-height: 1rem;
+                padding: 0.2rem 1rem;
+                width: 12rem;
+            }
+            input:focus {
+                border-color: #4caf50;
+                outline: 0;
+            }
+            main {
+                border: 0.2rem solid #4caf50;
+                border-radius: 0.4rem;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                max-height: 38rem;
+                max-width: 37rem;
+                padding: 1rem 1rem 1rem 2rem;
+                position: fixed;
+                right: 0;
+                top: 0;
+            }
+            span {
+                border: 0.2rem solid #c8e6c9;
+                border-radius: 0.4rem;
+                display: block;
+                font-size: 0.6rem;
+                line-height: 1rem;
+                margin-top: 1rem;
+                padding: 0.2rem 1rem;
+                position: relative;
+                width: 12rem;
+            }
+            span:before {
+                background: linear-gradient(-45deg, transparent, transparent, 50%, #ffffff, 50%, #ffffff);
+                border-left: 0.2rem solid #c8e6c9;
+                border-top: 0.2rem solid #c8e6c9;
+                content: "";
+                display: block;
+                height: 1rem;
+                left: 15%;
+                position: absolute;
+                top: -0.7rem;
+                transform: rotate(45deg);
+                width: 1rem;
+            }
+        </style>
+        <script src="js-md5.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                let input = document.querySelector("input");
+                let output = document.querySelector("span");
+                input.addEventListener("input", () => {
+                    output.innerHTML = md5(input.value);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <main>
+            <h1>js-md5</h1>
+            <h2>example</h2>
+            <div>
+                <input type="text">
+                <span>d41d8cd98f00b204e9800998ecf8427e</span>
+            </div>
+            <h2>how-to</h2>
+            <div>
+                <pre><code>&lt;script src="js-md5.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    let d1 = md5("");
+    let d2 = md5("a");
+    let d3 = md5("message digest");
+&lt;/script&gt;</code></pre>
+            </div>
+        </main>
+    </body>
+</html>
